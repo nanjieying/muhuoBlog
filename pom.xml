@@ -27,16 +27,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-
+        <!-- myBatis -->
         <mybatis.plus.version>3.3.1</mybatis.plus.version>
         <mysql.connector.version>8.0.19</mysql.connector.version>
-        <mssql-jdbc.version>8.2.1.jre8</mssql-jdbc.version>
 
         <lombok.version>1.18.12</lombok.version>
 
         <!-- utils -->
         <fastjson.version>1.2.70</fastjson.version>
-        <lombok.version>1.18.12</lombok.version>
         <swagger.version>2.9.2</swagger.version>
         <commons-lang3.version>3.9</commons-lang3.version>
         <hibernate-core.version>5.4.14.Final</hibernate-core.version>
