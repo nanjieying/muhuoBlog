@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--主pom文件的扶依赖，主要是定义SpringBoot的版本-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.6.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <!--定义主文件的命名-->
+    <groupId>cn.itnan</groupId>
+    <artifactId>muhuoBlog</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <description>Data Platform</description>
+    <packaging>pom</packaging>
+
+    <!--管理依赖版本-->
+    <properties>
+        <!-- module version -->
+        <modules.muhuo-api.version>1.0-SNAPSHOT</modules.muhuo-api.version>
+        <modules.muhuo-auth.version>1.0-SNAPSHOT</modules.muhuo-auth.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+
+        <mybatis.plus.version>3.3.1</mybatis.plus.version>
+        <mysql.connector.version>8.0.19</mysql.connector.version>
+        <mssql-jdbc.version>8.2.1.jre8</mssql-jdbc.version>
+
+        <lombok.version>1.18.12</lombok.version>
+
+        <!-- utils -->
+        <fastjson.version>1.2.70</fastjson.version>
+        <lombok.version>1.18.12</lombok.version>
+        <swagger.version>2.9.2</swagger.version>
+        <commons-lang3.version>3.9</commons-lang3.version>
+        <hibernate-core.version>5.4.14.Final</hibernate-core.version>
+        <p6spy.version>3.8.0</p6spy.version>
+        <jackson.version>2.11.1</jackson.version>
+        <snakeyaml.version>1.25</snakeyaml.version>
+        <minio.version>7.1.0</minio.version>
+        <commons-configuration.version>1.10</commons-configuration.version>
+        <commons-io.version>2.7</commons-io.version>
+        <httpclint.version>4.5.5</httpclint.version>
+        <aspectj.version>1.9.4</aspectj.version>
+        <mybatis.extension.version>3.3.1</mybatis.extension.version>
+        <mybatis.core.version>3.3.1</mybatis.core.version>
+        <shiro.version>1.4.0</shiro.version>
+        <flyway.version>6.0.7</flyway.version>
+        <poi.version>3.14</poi.version>
+        <poi-ooxml.version>3.14</poi-ooxml.version>
+        <zip4j.version>1.3.2</zip4j.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!--将模块加入到主配置文件中-->
+    <modules>
+        <module>muhuo-api</module>
+        <module>muhuo-auth</module>
+    </modules>
+
+    <!--具体的依赖-->
+    <dependencyManagement>
+        <dependencies>
+            <!-- modules -->
+            <dependency>
+                <groupId>com.itnan</groupId>
+                <artifactId>muhuo-api</artifactId>
+                <version>${modules.muhuo-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.itnan</groupId>
+                <artifactId>muhuo-auth</artifactId>
+                <version>${modules.muhuo-auth.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+
+            <!-- mysql -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+
+            <!-- fast josn -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- swagger -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <!-- common lang3 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <!-- common io -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+
+            <!-- jackson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
+
+</project>
