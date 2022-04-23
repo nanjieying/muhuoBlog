@@ -23,6 +23,7 @@
         <!-- module version -->
         <modules.muhuo-api.version>1.0-SNAPSHOT</modules.muhuo-api.version>
         <modules.muhuo-auth.version>1.0-SNAPSHOT</modules.muhuo-auth.version>
+        <modules.muhuo-common.version>1.0-SNAPSHOT</modules.muhuo-common.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -78,6 +79,7 @@
     <modules>
         <module>muhuo-api</module>
         <module>muhuo-auth</module>
+        <module>muhuo-common</module>
     </modules>
 
     <!--具体的依赖-->
@@ -93,6 +95,11 @@
                 <groupId>com.itnan</groupId>
                 <artifactId>muhuo-auth</artifactId>
                 <version>${modules.muhuo-auth.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.itnan</groupId>
+                <artifactId>muhuo-common</artifactId>
+                <version>${modules.muhuo-common.version}</version>
             </dependency>
 
 
